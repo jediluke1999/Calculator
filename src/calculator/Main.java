@@ -10,6 +10,7 @@ public class Main {
 		EventHandlers.CallForOperator();
 		EventHandlers.CallForInputs();
 		Operator.returnOperator();
-		System.out.println("The " + Operator.operatorType[Input.parsedSelection - 1] + " of your two numbers is " + Operator.operatorResult + ".");	
+		System.out.println("The " + Operator.operatorType[Input.parsedSelection - 1] + " of your two numbers is " + Operator.operatorResult + ".");
+		EventHandlers.TryAgain();
 	}
 }

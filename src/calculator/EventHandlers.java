@@ -27,7 +27,7 @@ public class EventHandlers {
 	
 	static void CallForOperator() {
 		errorStatus = true;
-		System.out.println("Hello! Please select a number the following:\n1)Addition\n2)Subtraction\n3)Division\n4)Multiplication");
+		System.out.println("Please select a number the following:\n1)Addition\n2)Subtraction\n3)Division\n4)Multiplication");
 		while (errorStatus == true) {
 			try {
 				Input.selection = Main.userInput.nextLine();
@@ -42,5 +42,25 @@ public class EventHandlers {
 				System.out.println("You know absolutely well that is not an option to choose from. At least choose a number!");
 			}
 		}
+	}
+	static void TryAgain() {
+		errorStatus = true;
+		while (errorStatus = true) {
+			System.out.println("Would you like to operate another two numbers? Yes or no?");
+			Input.inputOne = Main.userInput.nextLine();
+			if (Input.inputOne.equalsIgnoreCase("yes")) {
+				CallForOperator();
+				CallForInputs();
+				Operator.returnOperator();
+				System.out.println("The " + Operator.operatorType[Input.parsedSelection - 1] + " of your two numbers is " + Operator.operatorResult + ".");	
+			} else if (Input.inputOne.equalsIgnoreCase("no")){
+				System.out.println("Well, thank you for your time!");
+				errorStatus = false;
+				break;
+			} else {
+				System.out.println("That's not a yes or no! Again...\n");
+			}
+		}
+		
 	}
 }
